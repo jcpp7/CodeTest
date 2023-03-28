@@ -55,7 +55,7 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
         }
     }
     
-    private func removeDuplicates() {
+    func removeDuplicates() {
         let buffer = self.storedShows
         let uniqueTransactions = Array(NSOrderedSet(array: buffer))
         // swiftlint:disable:next force_cast
