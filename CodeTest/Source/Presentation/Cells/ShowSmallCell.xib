@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,10 +40,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Ap-nL1">
-                                <rect key="frame" x="0.0" y="82" width="160" height="55"/>
+                                <rect key="frame" x="0.0" y="82" width="160" height="78"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPD-2k-mHL">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="78"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" systemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -56,33 +57,12 @@
                                     <constraint firstItem="JPD-2k-mHL" firstAttribute="leading" secondItem="NHC-Ap-nL1" secondAttribute="leading" id="ehW-C7-gEq"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ma-x5-vmO">
-                                <rect key="frame" x="0.0" y="139" width="160" height="21"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Fuzzy Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dph-1f-cNM">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="13"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="dph-1f-cNM" firstAttribute="leading" secondItem="0ma-x5-vmO" secondAttribute="leading" id="0QX-lJ-7Iw"/>
-                                    <constraint firstItem="dph-1f-cNM" firstAttribute="top" secondItem="0ma-x5-vmO" secondAttribute="top" id="0av-fG-ZHW"/>
-                                    <constraint firstAttribute="height" constant="21" id="VIS-jY-9N8"/>
-                                    <constraint firstAttribute="trailing" secondItem="dph-1f-cNM" secondAttribute="trailing" id="bca-WB-fsz"/>
-                                    <constraint firstAttribute="bottom" secondItem="dph-1f-cNM" secondAttribute="bottom" constant="8" id="ccg-bo-K8t"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NHC-Ap-nL1" secondAttribute="trailing" id="Mvm-SH-L7b"/>
                             <constraint firstAttribute="trailing" secondItem="agR-sW-lXz" secondAttribute="trailing" id="Tes-Zb-Ju5"/>
                             <constraint firstItem="NHC-Ap-nL1" firstAttribute="leading" secondItem="kvH-AI-GtN" secondAttribute="leading" id="cm0-ws-dkD"/>
                             <constraint firstItem="agR-sW-lXz" firstAttribute="leading" secondItem="kvH-AI-GtN" secondAttribute="leading" id="hMP-of-waD"/>
-                            <constraint firstItem="0ma-x5-vmO" firstAttribute="leading" secondItem="kvH-AI-GtN" secondAttribute="leading" id="k0q-v5-lRA"/>
-                            <constraint firstAttribute="trailing" secondItem="0ma-x5-vmO" secondAttribute="trailing" id="mRz-xJ-jSP"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -95,9 +75,8 @@
             </collectionViewCellContentView>
             <size key="customSize" width="162" height="129"/>
             <connections>
-                <outlet property="date" destination="dph-1f-cNM" id="WmE-ey-PHE"/>
                 <outlet property="featuredImage" destination="mym-zm-sdw" id="khr-Cn-rHf"/>
-                <outlet property="title" destination="JPD-2k-mHL" id="8VM-Yv-aJG"/>
+                <outlet property="titleLabel" destination="JPD-2k-mHL" id="mhT-kA-AkB"/>
             </connections>
             <point key="canvasLocation" x="202.89855072463769" y="18.080357142857142"/>
         </collectionViewCell>

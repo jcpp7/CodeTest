@@ -1,8 +1,8 @@
 //
 //  ShowViewControler.swift
-//  FreshlyPressed
+//  CodeTest
 //
-//  Copyright © 2020 Automattic. All rights reserved.
+//  Copyright © 2023 Jose Cruz Perez Pi. All rights reserved.
 //
 
 import UIKit
@@ -89,7 +89,7 @@ extension ShowViewController: WKNavigationDelegate {
     }
     
     private func showErrorAlert() {
-        showAlert(title: L10n.postErrorLoadingTitle.text, message: L10n.postErrorLoadingMessage.text, actionText: L10n.postErrorLoadingButton.text) {
+        showAlert(title: L10n.showErrorLoadingTitle.text, message: L10n.showErrorLoadingMessage.text, actionText: L10n.showErrorLoadingButton.text) {
             self.viewModel.dismiss()
         }
     }

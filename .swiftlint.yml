@@ -1,0 +1,15 @@
+included:
+  - CodeTest
+
+excluded:
+  - Pods/
+  - CodeTest/Resource/SwiftGen/
+  
+disabled_rules:
+  - large_tuple
+  - trailing_whitespace
+
+line_length:
+  warning: 150
+  ignores_comments: true
+

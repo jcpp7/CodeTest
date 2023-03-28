@@ -1,0 +1,13 @@
+
+strings:
+    - inputs:  CodeTest/Resource/String/en.lproj/Localizable.strings
+      outputs:
+        - templatePath: swiftui-strings-template.stencil
+          output: CodeTest/Resource/SwiftGen/Localization.swift
+
+xcassets:
+  inputs: CodeTest/Resource/Asset
+  filter: .+\.xcassets$
+  outputs:
+    - templatePath: swiftui-assets-template.stencil
+      output: CodeTest/Resource/SwiftGen/Assets.swift

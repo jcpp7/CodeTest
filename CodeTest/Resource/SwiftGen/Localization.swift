@@ -20,10 +20,8 @@ import SwiftUI
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
-  /// My bookstore
+  /// My TV Shows
   public static let bookstoreTitle = LocalizedString(table: "Localizable", lookupKey: "bookstore_title")
-  /// Delete post
-  public static let deleteActionTitle = LocalizedString(table: "Localizable", lookupKey: "delete_action_title")
   /// Loading...
   public static let loaderLoading = LocalizedString(table: "Localizable", lookupKey: "loader_loading")
   /// Grid view
@@ -31,17 +29,17 @@ public enum L10n {
   /// List view
   public static let menuListAccesibilityLabel = LocalizedString(table: "Localizable", lookupKey: "menu_list_accesibility_label")
   /// Ok
-  public static let postErrorLoadingButton = LocalizedString(table: "Localizable", lookupKey: "post_error_loading_button")
+  public static let showErrorLoadingButton = LocalizedString(table: "Localizable", lookupKey: "show_error_loading_button")
   /// We are sorry. Something wrong happened. Pease, try again in a few minutes.
-  public static let postErrorLoadingMessage = LocalizedString(table: "Localizable", lookupKey: "post_error_loading_message")
+  public static let showErrorLoadingMessage = LocalizedString(table: "Localizable", lookupKey: "show_error_loading_message")
   /// Error
-  public static let postErrorLoadingTitle = LocalizedString(table: "Localizable", lookupKey: "post_error_loading_title")
+  public static let showErrorLoadingTitle = LocalizedString(table: "Localizable", lookupKey: "show_error_loading_title")
   /// We are sorry. Something wrong happened. Pease, try again.
-  public static let postsErrorLoadingMessage = LocalizedString(table: "Localizable", lookupKey: "posts_error_loading_message")
+  public static let showsErrorLoadingMessage = LocalizedString(table: "Localizable", lookupKey: "shows_error_loading_message")
   /// Retry
-  public static let postsErrorLoadingRetryButton = LocalizedString(table: "Localizable", lookupKey: "posts_error_loading_retry_button")
+  public static let showsErrorLoadingRetryButton = LocalizedString(table: "Localizable", lookupKey: "shows_error_loading_retry_button")
   /// Error
-  public static let postsErrorLoadingTitle = LocalizedString(table: "Localizable", lookupKey: "posts_error_loading_title")
+  public static let showsErrorLoadingTitle = LocalizedString(table: "Localizable", lookupKey: "shows_error_loading_title")
 }
 
 // MARK: - Implementation Details

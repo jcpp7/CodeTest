@@ -9,7 +9,7 @@ import Foundation
 
 class ShowMapper:Mappable {
     
-    static func transform(_ dataModel: String) -> Show {
-        Show(title: "", date: "", image: "")
+    static func transform(_ dataModel: ShowDTO) -> Show {
+        Show(image: ShowImage(medium: dataModel.image.medium), name: dataModel.name, rating: Average(average: dataModel.rating?.average), summary: dataModel.summary)
     }
 }

@@ -1,9 +1,9 @@
 //
 //  URLConstants.swift
-//  FreshlyPressed
+//  CodeTest
 //
 //  Created by Jose Cruz Perez Pi on 13/2/23.
-//  Copyright © 2023 Automattic. All rights reserved.
+//  Copyright © 2023 Jose Cruz Perez Pi. All rights reserved.
 //
 
 struct URLConstants {

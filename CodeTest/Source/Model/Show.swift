@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Show: Decodable {
-    public var title: String
-    public var date: String
-    public var image: String
-
+struct Show {
+    public var image: ShowImage
+    public var name: String
+    public var rating: Average?
+    public var summary: String
 }

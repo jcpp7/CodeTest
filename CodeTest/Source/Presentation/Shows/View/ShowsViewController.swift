@@ -1,8 +1,8 @@
 //
 //  ShowsViewControler.swift
-//  FreshlyPressed
+//  CodeTest
 //
-//  Copyright © 2023 Automattic. All rights reserved.
+//  Copyright © 2023 Jose Cruz Perez Pi. All rights reserved.
 //
 
 import UIKit
@@ -55,21 +55,22 @@ class ShowsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SwiftSpinner.show(L10n.loaderLoading.text)
         loadShows()
     }
     
     private func configureNavigationButtons() {
         title = L10n.bookstoreTitle.text
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Asset.Colors.automatticColor.uiColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Asset.Colors.baseColor.uiColor]
         
         let changeViewButton = UIBarButtonItem(image: Asset.Images.menuGrid.image, style: .plain, target: self, action: #selector(changeViewType))
         self.navigationItem.leftBarButtonItem = changeViewButton
-        navigationItem.leftBarButtonItem?.tintColor = Asset.Colors.automatticColor.uiColor
+        navigationItem.leftBarButtonItem?.tintColor = Asset.Colors.baseColor.uiColor
         navigationItem.leftBarButtonItem?.accessibilityLabel = L10n.menuGridAccesibilityLabel.text
         
         let reloadButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadShows))
         navigationItem.rightBarButtonItem = reloadButton
-        navigationItem.rightBarButtonItem?.tintColor = Asset.Colors.automatticColor.uiColor
+        navigationItem.rightBarButtonItem?.tintColor = Asset.Colors.baseColor.uiColor
     }
     
     private func configureCollectionView() {
@@ -118,11 +119,11 @@ class ShowsViewController: BaseViewController {
 
 extension ShowsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return viewModel.shows.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -160,9 +161,8 @@ extension ShowsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     private func getBigCell(indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowBigCell.identifier, for: indexPath) as? ShowBigCell {
-//            let show = //
-//            cell.configure(show: show)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowBigCell.identifier, for: indexPath) as? ShowBigCell, let show = viewModel.getShow(index: indexPath.row) {
+            cell.configure(show: show)
             return cell
         }
         return UICollectionViewCell()
@@ -171,9 +171,8 @@ extension ShowsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     private func getSmallCell(indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowSmallCell.identifier,
                                                          for: indexPath) as? ShowSmallCell,
-           viewType == true {
-//            let show = //
-//            cell.configure(show: show)
+           viewType == true, let show = viewModel.getShow(index: indexPath.row) {
+            cell.configure(show: show)
             return cell
         }
         return UICollectionViewCell()
@@ -182,16 +181,18 @@ extension ShowsViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 extension ShowsViewController: ShowsViewProtocol {
     func loadShowsSuccess() {
-        
+        SwiftSpinner.hide {
+            self.collectionView.reloadData()
+        }
     }
 
     func loadShowsError() {
         SwiftSpinner.hide {
-//            self.showAlert(title: L10n.showsErrorLoadingTitle.text,
-//                      message: L10n.showsErrorLoadingMessage.text,
-//                      actionText: L10n.showsErrorLoadingRetryButton.text, action: {
-//                self.loadShows()
-//            })
+            self.showAlert(title: L10n.showsErrorLoadingTitle.text,
+                      message: L10n.showsErrorLoadingMessage.text,
+                      actionText: L10n.showsErrorLoadingRetryButton.text, action: {
+                self.loadShows()
+            })
         }
     }
 }

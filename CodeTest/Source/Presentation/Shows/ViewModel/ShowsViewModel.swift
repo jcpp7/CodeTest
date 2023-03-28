@@ -1,9 +1,9 @@
 //
 //  ShowsViewModel.swift
-//  FreshlyPressed
+//  CodeTest
 //
 //  Created by Jose Cruz Perez Pi on 13/2/23.
-//  Copyright © 2023 Automattic. All rights reserved.
+//  Copyright © 2023 Jose Cruz Perez Pi. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
     let router: MainRouter
     fileprivate var showsRepository: ShowsRepositoryProtocol
     
-    var shows: [Show]?
+    var shows: [Show] = []
 
     init(router: MainRouter, showsRepository: ShowsRepositoryProtocol) {
         self.router = router
@@ -28,8 +28,8 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
 
     func loadShows() {
         showsRepository.loadShows(page: 0) { [weak self] shows, error in
-            if shows != nil {
-                self?.shows = shows
+            if let rShows = shows {
+                self?.shows = rShows
                 self?.view?.loadShowsSuccess()
             }
             if error != nil {
@@ -40,5 +40,12 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
     
     func navigateToShowDetails(show: Show) {
         //router.navigateToShowDetails(show: show)
+    }
+    
+    func getShow(index: Int) -> Show? {
+        if index < shows.count {
+            return shows[index]
+        }
+        return nil
     }
 }

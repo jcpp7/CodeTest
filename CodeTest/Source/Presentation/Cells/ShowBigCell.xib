@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -45,18 +46,9 @@
                                         <rect key="frame" x="8" y="8" width="244" height="64"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NdP-r4-QvU">
-                                                <rect key="frame" x="0.0" y="0.0" width="228" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="228" height="64"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" systemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Fuzzy Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pOv-DJ-rox">
-                                                <rect key="frame" x="0.0" y="49.5" width="63.5" height="14.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="14.5" id="Jdp-HS-Qht"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -96,9 +88,8 @@
             </collectionViewCellContentView>
             <size key="customSize" width="368" height="80"/>
             <connections>
-                <outlet property="date" destination="pOv-DJ-rox" id="qh0-L7-wVM"/>
                 <outlet property="featuredImage" destination="R9D-On-VrS" id="LKf-wf-fBD"/>
-                <outlet property="title" destination="NdP-r4-QvU" id="nsp-Gx-cW1"/>
+                <outlet property="titleLabel" destination="NdP-r4-QvU" id="yTJ-NO-9BM"/>
             </connections>
             <point key="canvasLocation" x="352.17391304347831" y="2.0089285714285712"/>
         </collectionViewCell>

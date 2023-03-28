@@ -1,9 +1,9 @@
 //
 //  ShowsRepository.swift
-//  FreshlyPressed
+//  CodeTest
 //
 //  Created by Jose Cruz Perez Pi on 16/2/23.
-//  Copyright © 2023 Automattic. All rights reserved.
+//  Copyright © 2023 Jose Cruz Perez Pi. All rights reserved.
 //
 
 import Foundation
@@ -43,7 +43,7 @@ class ShowsRepository: ShowsRepositoryProtocol {
             case .success(let data):
                 do {
                     let shows = try JSONDecoder().decode([ShowDTO].self, from: data!)
-                    completion([], nil)
+                    completion(ShowMapper.listTransform(shows), nil)
                 }
                 catch {
                     completion(nil, ShowsRepositoryError.errorData)

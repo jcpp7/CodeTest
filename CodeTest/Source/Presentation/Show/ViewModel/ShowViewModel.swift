@@ -1,9 +1,9 @@
 //
 //  ShowViewModel.swift
-//  FreshlyPressed
+//  CodeTest
 //
 //  Created by Jose Cruz Perez Pi on 15/7/22.
-//  Copyright © 2022 Automattic. All rights reserved.
+//  Copyright © 2023 Jose Cruz Perez Pi. All rights reserved.
 //
 
 import Foundation

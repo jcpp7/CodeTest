@@ -1,9 +1,9 @@
 //
 //  ShowSmallCell.swift
-//  FreshlyPressed
+//  CodeTest
 //
 //  Created by Jose Cruz Perez Pi on 14/2/23.
-//  Copyright © 2023 Automattic. All rights reserved.
+//  Copyright © 2023 Jose Cruz Perez Pi. All rights reserved.
 //
 
 import Foundation

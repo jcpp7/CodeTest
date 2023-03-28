@@ -17,6 +17,8 @@
 		090DFB8A29D2F93800980768 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB8929D2F93800980768 /* Mappable.swift */; };
 		090DFB8C29D2F95700980768 /* ShowMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB8B29D2F95700980768 /* ShowMapper.swift */; };
 		090DFB9029D2FBED00980768 /* ShowDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB8F29D2FBED00980768 /* ShowDTO.swift */; };
+		090DFB9229D301A900980768 /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB9129D301A900980768 /* ShowImage.swift */; };
+		090DFB9429D301CF00980768 /* Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB9329D301CF00980768 /* Average.swift */; };
 		09464C6A29D2D297002AB223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464C6929D2D297002AB223 /* AppDelegate.swift */; };
 		09464C8129D2D29A002AB223 /* CodeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464C8029D2D29A002AB223 /* CodeTestTests.swift */; };
 		09464CAD29D2D9E8002AB223 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09464C9D29D2D9E7002AB223 /* Localizable.strings */; };
@@ -72,6 +74,8 @@
 		090DFB8929D2F93800980768 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		090DFB8B29D2F95700980768 /* ShowMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMapper.swift; sourceTree = "<group>"; };
 		090DFB8F29D2FBED00980768 /* ShowDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDTO.swift; sourceTree = "<group>"; };
+		090DFB9129D301A900980768 /* ShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImage.swift; sourceTree = "<group>"; };
+		090DFB9329D301CF00980768 /* Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average.swift; sourceTree = "<group>"; };
 		09464C6629D2D297002AB223 /* CodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09464C6929D2D297002AB223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09464C7C29D2D29A002AB223 /* CodeTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,6 +346,8 @@
 			isa = PBXGroup;
 			children = (
 				09464CEC29D2E881002AB223 /* Show.swift */,
+				090DFB9129D301A900980768 /* ShowImage.swift */,
+				090DFB9329D301CF00980768 /* Average.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -446,6 +452,8 @@
 				09464C6329D2D297002AB223 /* Frameworks */,
 				09464C6429D2D297002AB223 /* Resources */,
 				E39D5CCE71853C3CD082C009 /* [CP] Embed Pods Frameworks */,
+				090DFB9529D3064100980768 /* SwiftGen */,
+				090DFB9629D3065C00980768 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -542,6 +550,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		090DFB9529D3064100980768 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		090DFB9629D3065C00980768 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		293ECABB824C16FCE07C926D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -627,6 +673,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090DFB9429D301CF00980768 /* Average.swift in Sources */,
 				09464CCB29D2DA11002AB223 /* MainRouter.swift in Sources */,
 				090DFB7829D2EAA000980768 /* ShowViewModel.swift in Sources */,
 				09464CE729D2E5C6002AB223 /* ShowsViewController.swift in Sources */,
@@ -647,6 +694,7 @@
 				09464CC129D2D9FE002AB223 /* BaseViewModel.swift in Sources */,
 				090DFB9029D2FBED00980768 /* ShowDTO.swift in Sources */,
 				09464CC329D2D9FE002AB223 /* BaseRouter.swift in Sources */,
+				090DFB9229D301A900980768 /* ShowImage.swift in Sources */,
 				09464CCA29D2DA11002AB223 /* AppAssembler.swift in Sources */,
 				09464CE929D2E5C6002AB223 /* ShowsRepository.swift in Sources */,
 				09464CC029D2D9FE002AB223 /* BaseViewController.swift in Sources */,
