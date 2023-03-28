@@ -12,4 +12,8 @@ class MainRouter: BaseRouter {
     
     static let shared = MainRouter()
     
+    func navigateToShowDetails(show: Show) {
+        let viewController: ShowViewController = AppAssembler.resolve(show: show)
+        pushViewController(viewController, animated: true)
+    }
 }

@@ -56,7 +56,7 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
     }
     
     func navigateToShowDetails(show: Show) {
-        //router.navigateToShowDetails(show: show)
+        router.navigateToShowDetails(show: show)
     }
     
     func getShow(index: Int) -> Show? {

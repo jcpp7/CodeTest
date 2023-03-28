@@ -88,8 +88,9 @@ class ShowsViewController: BaseViewController {
     }
     
     func navigateToShowDetails(index: IndexPath) {
-        //let show = //
-        //viewModel.navigateToShowDetails(show: show)
+        if let show = viewModel.getShow(index: index.row) {
+            viewModel.navigateToShowDetails(show: show)
+        }
     }
     
     @objc func changeViewType(_ sender: UIBarButtonItem) {

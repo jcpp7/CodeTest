@@ -14,8 +14,11 @@ protocol ShowViewProtocol: BaseViewControllerProtocol {
 
 class ShowViewController: BaseViewController {
     
-    @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ratingTitleLabel: UILabel!
+    @IBOutlet weak var ratingValueLabel: UILabel!
+    @IBOutlet weak var summaryTextView: UITextView!
     
     var viewModel: ShowViewModel<ShowViewController>
     
@@ -36,40 +39,29 @@ class ShowViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCloseButton()
-        closeButton.isHidden = UIDevice.current.orientation.isPortrait
-        NotificationCenter.default.addObserver(self, selector: #selector(rotate), name: UIDevice.orientationDidChangeNotification, object: nil)
-    }
-    
-    private func configureCloseButton() {
-        closeButton.backgroundColor = Asset.Colors.buttonBackground.uiColor
-        closeButton.tintColor = Asset.Colors.buttonTintColor.uiColor
-        closeButton.layer.cornerRadius = closeButton.layer.frame.width/2
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadUrl()
+        configureView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        webView.stopLoading()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    private func loadUrl() {
-        
-    }
-    
-    @objc func rotate() {
-        closeButton.isHidden = UIDevice.current.orientation.isPortrait
-    }
-    
-    @IBAction func close(_ sender: Any) {
-        viewModel.dismiss()
+    private func configureView() {
+        if let url = URL(string: viewModel.show.image.medium) {
+            mainImageView.imageFrom(url: url)
+        }
+        titleLabel.text = viewModel.show.name
+        if let rating = viewModel.show.rating?.average {
+            ratingTitleLabel.text = String(rating)
+        }
+        summaryTextView.text = viewModel.show.summary
     }
 }
 
