@@ -42,9 +42,10 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
             showsRepository.loadShows(page: page) { [weak self] shows, error in
                 if let rShows = shows {
                     self?.page += 1
+                    
                     self?.storedShows.append(contentsOf: rShows)
                     self?.canAskForTransactions = true
-                    self?.view?.loadShowsSuccess()
+                    self?.removeDuplicates()
                 }
                 if error != nil {
                     self?.canAskForTransactions = true
@@ -52,6 +53,15 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
                 }
             }
         }
+    }
+    
+    private func removeDuplicates() {
+        let buffer = self.storedShows
+        let uniqueTransactions = Array(NSOrderedSet(array: buffer))
+        // swiftlint:disable:next force_cast
+        self.storedShows = uniqueTransactions as! [Show]
+        
+        view?.loadShowsSuccess()
     }
     
     func navigateToShowDetails(show: Show) {

@@ -12,5 +12,9 @@ import UIKit
 @objc public class TestAssembler: NSObject {
     
     @objc static let shared = TestAssembler()
-
+    
+    // MARK: Repositories
+    class func resolve() -> MockShowsRepository {
+        return MockShowsRepository()
+    }
 }

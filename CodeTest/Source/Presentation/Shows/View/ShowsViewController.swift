@@ -51,11 +51,11 @@ class ShowsViewController: BaseViewController {
         
         configureNavigationButtons()
         configureCollectionView()
+        loadShows()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadShows()
     }
     
     private func configureNavigationButtons() {
@@ -188,6 +188,7 @@ extension ShowsViewController: ShowsViewProtocol {
     func loadShowsSuccess() {
         SwiftSpinner.hide {
             self.collectionView.reloadData()
+            self.view.accessibilityIdentifier = "showsView"
         }
     }
 
