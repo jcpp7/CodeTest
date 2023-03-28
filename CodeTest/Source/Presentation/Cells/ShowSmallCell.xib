@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kvH-AI-GtN">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kvH-AI-GtN">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agR-sW-lXz">
@@ -41,7 +41,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Ap-nL1">
-                                <rect key="frame" x="0.0" y="82" width="160" height="20.5"/>
+                                <rect key="frame" x="0.0" y="88" width="160" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPD-2k-mHL">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="20.5"/>
@@ -59,7 +59,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E70-Hh-2pB">
-                                <rect key="frame" x="0.0" y="104.5" width="160" height="55.5"/>
+                                <rect key="frame" x="0.0" y="116.5" width="160" height="43.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>

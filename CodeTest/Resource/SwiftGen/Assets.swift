@@ -33,6 +33,7 @@ internal enum Asset {
   internal enum Images {
     internal static let menuGrid = ImageAsset(name: "menu_grid")
     internal static let menuList = ImageAsset(name: "menu_list")
+    internal static let star = ImageAsset(name: "star")
     internal static let tvmazeLogo = ImageAsset(name: "tvmaze_logo")
   }
 }

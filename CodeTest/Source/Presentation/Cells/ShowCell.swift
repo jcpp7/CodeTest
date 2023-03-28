@@ -20,7 +20,8 @@ class ShowCell: UICollectionViewCell {
     
     @IBOutlet weak var featuredImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var summaryLabel: UILabel?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -37,10 +38,15 @@ class ShowCell: UICollectionViewCell {
         let headlineFont = UIFont.preferredFont(forTextStyle: .headline)
         titleLabel.font = headlineFont
         titleLabel.isAccessibilityElement = true
+        
+        let bodyFont = UIFont.preferredFont(forTextStyle: .footnote)
+        summaryLabel?.font = bodyFont
+        summaryLabel?.isAccessibilityElement = true
     }
     
     func configure(show: Show) {
         titleLabel.text = show.name
+        summaryLabel?.attributedText = show.summary.htmlToAttributedString
         let placeholder = Asset.Images.tvmazeLogo.image
         featuredImage.image = placeholder
         

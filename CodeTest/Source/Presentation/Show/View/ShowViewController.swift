@@ -63,12 +63,12 @@ class ShowViewController: BaseViewController {
         titleLabel.font = titleFont
         titleLabel.isAccessibilityElement = true
 
-        ratingTitleLabel.textColor = Asset.Colors.primaryColor.uiColor
+        ratingTitleLabel.textColor = Asset.Colors.lightGrayColor.uiColor
         let headlineFont = UIFont.preferredFont(forTextStyle: .headline)
         ratingTitleLabel.font = headlineFont
         ratingTitleLabel.isAccessibilityElement = true
 
-        ratingValueLabel.textColor = Asset.Colors.primaryColor.uiColor
+        ratingValueLabel.textColor = Asset.Colors.lightGrayColor.uiColor
         ratingValueLabel.font = headlineFont
         ratingValueLabel.isAccessibilityElement = true
         
@@ -80,6 +80,7 @@ class ShowViewController: BaseViewController {
 
         if let url = URL(string: viewModel.show.image.medium) {
             mainImageView.imageFrom(url: url)
+            mainImageView.backgroundColor = Asset.Colors.backgroundColor.uiColor
         }
 
         summaryTextView.attributedText = viewModel.show.summary.htmlToAttributedString
@@ -91,4 +92,3 @@ class ShowViewController: BaseViewController {
 extension ShowViewController: ShowViewProtocol {
     
 }
-
