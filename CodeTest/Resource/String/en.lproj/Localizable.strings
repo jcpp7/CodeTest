@@ -1,0 +1,11 @@
+"post_error_loading_title" = "Error";
+"post_error_loading_message" = "We are sorry. Something wrong happened. Pease, try again in a few minutes.";
+"post_error_loading_button" = "Ok";
+"delete_action_title" = "Delete post";
+"posts_error_loading_title" = "Error";
+"posts_error_loading_message" = "We are sorry. Something wrong happened. Pease, try again.";
+"posts_error_loading_retry_button" = "Retry";
+"loader_loading" = "Loading...";
+"bookstore_title" = "My bookstore";
+"menu_grid_accesibility_label" = "Grid view";
+"menu_list_accesibility_label" = "List view";

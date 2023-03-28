@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (5.6.4)
+  - iOSSnapshotTestCase (8.0.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
+  - iOSSnapshotTestCase/Core (8.0.0)
+  - iOSSnapshotTestCase/SwiftSupport (8.0.0):
+    - iOSSnapshotTestCase/Core
+  - KIF/Core (3.8.8)
+  - KIF/IdentifierTests (3.8.8):
+    - KIF/Core
+  - SwiftGen (6.6.2)
+  - SwiftLint (0.50.3)
+  - SwiftSpinner (2.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - iOSSnapshotTestCase
+  - KIF/IdentifierTests
+  - SwiftGen (~> 6.0)
+  - SwiftLint
+  - SwiftSpinner
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - iOSSnapshotTestCase
+    - KIF
+    - SwiftGen
+    - SwiftLint
+    - SwiftSpinner
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
+  KIF: 3d480ea35ac83f9b96f14c141c79aeb2d16804a7
+  SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
+  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  SwiftSpinner: f9b59477fe107427f2b5b835497d6636fa167ede
+
+PODFILE CHECKSUM: a9c5901c684f8166aea379d0ec7be06399a51251
+
+COCOAPODS: 1.12.0
