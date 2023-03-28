@@ -79,7 +79,6 @@ class ShowsViewController: BaseViewController {
     }
     
     private func loadShows() {
-        //SwiftSpinner.show(L10n.loaderLoading.text)
         viewModel.loadShows()
     }
     
@@ -161,7 +160,8 @@ extension ShowsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     private func getBigCell(indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowBigCell.identifier, for: indexPath) as? ShowBigCell, let show = viewModel.getShow(index: indexPath.row) {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowBigCell.identifier, for: indexPath) as? ShowBigCell,
+            let show = viewModel.getShow(index: indexPath.row) {
             cell.configure(show: show)
             return cell
         }

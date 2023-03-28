@@ -17,29 +17,31 @@ import Foundation
  */
 protocol Mappable {
     
+    // swiftlint:disable type_name
     associatedtype T
+    // swiftlint:disable type_name
     associatedtype S
     
     /// Transform from type T (data model object) to S (domain model object).
     ///
     /// - Parameter dataModel: Type T object.
     /// - Returns: Type S object
-    static func transform(_ dataModel:T) -> S
+    static func transform(_ dataModel: T) -> S
     
     /// Transform from type S (domain model object) to T (data model object).
     ///
     /// - Parameter domainModel: Type S object.
     /// - Returns: Type T object.
-    static func reverseTransform(_ model:S) -> T
+    static func reverseTransform(_ model: S) -> T
 }
 
 extension Mappable {
     
-    static func transform(_ dataModel:T) -> S {
+    static func transform(_ dataModel: T) -> S {
         fatalError("Must override")
     }
     
-    static func reverseTransform(_ model:S) -> T {
+    static func reverseTransform(_ model: S) -> T {
         fatalError("Must override")
     }
     
@@ -48,7 +50,7 @@ extension Mappable {
     ///
     /// - Parameter dataModelList: Type T object list.
     /// - Returns: Type S object list.
-    public static func listTransform(_ dataModelList:[T]) -> [S] {
+    public static func listTransform(_ dataModelList: [T]) -> [S] {
         return dataModelList.compactMap(transform)
     }
     
@@ -57,7 +59,7 @@ extension Mappable {
     ///
     /// - Parameter domainModelList: Type S object list.
     /// - Returns: Type T object list.
-    public static func reverseListTransform(_ modelList:[S]) -> [T] {
+    public static func reverseListTransform(_ modelList: [S]) -> [T] {
         return modelList.compactMap(reverseTransform)
     }
 }

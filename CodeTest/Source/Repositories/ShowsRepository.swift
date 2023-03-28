@@ -44,8 +44,7 @@ class ShowsRepository: ShowsRepositoryProtocol {
                 do {
                     let shows = try JSONDecoder().decode([ShowDTO].self, from: data!)
                     completion(ShowMapper.listTransform(shows), nil)
-                }
-                catch {
+                } catch {
                     completion(nil, ShowsRepositoryError.errorData)
                 }
             case .failure(let error):

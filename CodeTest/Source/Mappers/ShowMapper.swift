@@ -7,9 +7,12 @@
 
 import Foundation
 
-class ShowMapper:Mappable {
+class ShowMapper: Mappable {
     
     static func transform(_ dataModel: ShowDTO) -> Show {
-        Show(image: ShowImage(medium: dataModel.image.medium), name: dataModel.name, rating: Average(average: dataModel.rating?.average), summary: dataModel.summary)
+        Show(image: ShowImage(medium: dataModel.image.medium),
+             name: dataModel.name,
+             rating: Average(average: dataModel.rating?.average),
+             summary: dataModel.summary)
     }
 }
