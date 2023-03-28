@@ -182,8 +182,7 @@
 		090DFB8729D2F8EA00980768 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				090DFB8D29D2FBD900980768 /* DataSource */,
-				09464CE029D2E5C6002AB223 /* ShowsRepository.swift */,
+				090DFBB129D3805900980768 /* ShowsRepository */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -231,6 +230,15 @@
 				090DFBA329D367DF00980768 /* MockShowsRepository.swift */,
 			);
 			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		090DFBB129D3805900980768 /* ShowsRepository */ = {
+			isa = PBXGroup;
+			children = (
+				090DFB8D29D2FBD900980768 /* DataSource */,
+				09464CE029D2E5C6002AB223 /* ShowsRepository.swift */,
+			);
+			path = ShowsRepository;
 			sourceTree = "<group>";
 		};
 		09464C5D29D2D296002AB223 = {
