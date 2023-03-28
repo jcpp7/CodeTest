@@ -37,7 +37,6 @@ class ShowCell: UICollectionViewCell {
         let headlineFont = UIFont.preferredFont(forTextStyle: .headline)
         titleLabel.font = headlineFont
         titleLabel.isAccessibilityElement = true
-
     }
     
     func configure(show: Show) {

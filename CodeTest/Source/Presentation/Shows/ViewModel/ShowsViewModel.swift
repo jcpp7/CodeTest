@@ -35,7 +35,6 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
     
     func loadShows() {
         if canAskForTransactions {
-            print("Ask for page %i", page)
             if page == 0 {
                 storedShows = []
             }

@@ -19,6 +19,7 @@
 		090DFB9029D2FBED00980768 /* ShowDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB8F29D2FBED00980768 /* ShowDTO.swift */; };
 		090DFB9229D301A900980768 /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB9129D301A900980768 /* ShowImage.swift */; };
 		090DFB9429D301CF00980768 /* Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB9329D301CF00980768 /* Average.swift */; };
+		090DFB9829D3279E00980768 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090DFB9729D3279E00980768 /* String+.swift */; };
 		09464C6A29D2D297002AB223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464C6929D2D297002AB223 /* AppDelegate.swift */; };
 		09464C8129D2D29A002AB223 /* CodeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464C8029D2D29A002AB223 /* CodeTestTests.swift */; };
 		09464CAD29D2D9E8002AB223 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09464C9D29D2D9E7002AB223 /* Localizable.strings */; };
@@ -74,6 +75,7 @@
 		090DFB8F29D2FBED00980768 /* ShowDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDTO.swift; sourceTree = "<group>"; };
 		090DFB9129D301A900980768 /* ShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImage.swift; sourceTree = "<group>"; };
 		090DFB9329D301CF00980768 /* Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average.swift; sourceTree = "<group>"; };
+		090DFB9729D3279E00980768 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		09464C6629D2D297002AB223 /* CodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09464C6929D2D297002AB223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09464C7C29D2D29A002AB223 /* CodeTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				090DFB6229D2E90600980768 /* UIImageView+.swift */,
+				090DFB9729D3279E00980768 /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				09464C6A29D2D297002AB223 /* AppDelegate.swift in Sources */,
 				09464CB529D2D9E8002AB223 /* Localization.swift in Sources */,
 				090DFB8C29D2F95700980768 /* ShowMapper.swift in Sources */,
+				090DFB9829D3279E00980768 /* String+.swift in Sources */,
 				090DFB6329D2E90600980768 /* UIImageView+.swift in Sources */,
 				090DFB7629D2EA9600980768 /* ShowViewController.swift in Sources */,
 				09464CED29D2E881002AB223 /* Show.swift in Sources */,

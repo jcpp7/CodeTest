@@ -18,6 +18,7 @@ class ShowViewController: BaseViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingTitleLabel: UILabel!
     @IBOutlet weak var ratingValueLabel: UILabel!
+    @IBOutlet weak var ratingStackView: UIStackView!
     @IBOutlet weak var summaryTextView: UITextView!
     
     var viewModel: ShowViewModel<ShowViewController>
@@ -54,14 +55,34 @@ class ShowViewController: BaseViewController {
     }
     
     private func configureView() {
+        navigationController?.navigationBar.tintColor = Asset.Colors.baseColor.uiColor
+
+        titleLabel.text = viewModel.show.name
+        titleLabel.textColor = Asset.Colors.primaryColor.uiColor
+        let titleFont = UIFont.preferredFont(forTextStyle: .title1)
+        titleLabel.font = titleFont
+        titleLabel.isAccessibilityElement = true
+
+        ratingTitleLabel.textColor = Asset.Colors.primaryColor.uiColor
+        let headlineFont = UIFont.preferredFont(forTextStyle: .headline)
+        ratingTitleLabel.font = headlineFont
+        ratingTitleLabel.isAccessibilityElement = true
+
+        ratingValueLabel.textColor = Asset.Colors.primaryColor.uiColor
+        ratingValueLabel.font = headlineFont
+        ratingValueLabel.isAccessibilityElement = true
+        
+        if let rating = viewModel.show.rating?.average {
+            ratingTitleLabel.text = L10n.ratingsTitleKey.text
+            ratingValueLabel.text = String(rating)
+            ratingStackView.isHidden = false
+        }
+
         if let url = URL(string: viewModel.show.image.medium) {
             mainImageView.imageFrom(url: url)
         }
-        titleLabel.text = viewModel.show.name
-        if let rating = viewModel.show.rating?.average {
-            ratingTitleLabel.text = String(rating)
-        }
-        summaryTextView.text = viewModel.show.summary
+
+        summaryTextView.attributedText = viewModel.show.summary.htmlToAttributedString
     }
 }
 

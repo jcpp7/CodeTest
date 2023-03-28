@@ -28,6 +28,8 @@ public enum L10n {
   public static let menuGridAccesibilityLabel = LocalizedString(table: "Localizable", lookupKey: "menu_grid_accesibility_label")
   /// List view
   public static let menuListAccesibilityLabel = LocalizedString(table: "Localizable", lookupKey: "menu_list_accesibility_label")
+  /// Rating:
+  public static let ratingsTitleKey = LocalizedString(table: "Localizable", lookupKey: "ratings_title_key")
   /// Ok
   public static let showErrorLoadingButton = LocalizedString(table: "Localizable", lookupKey: "show_error_loading_button")
   /// We are sorry. Something wrong happened. Pease, try again in a few minutes.
