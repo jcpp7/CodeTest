@@ -30,8 +30,6 @@
 		09464CC129D2D9FE002AB223 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464CBA29D2D9FE002AB223 /* BaseViewModel.swift */; };
 		09464CC229D2D9FE002AB223 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464CBB29D2D9FE002AB223 /* BaseLabel.swift */; };
 		09464CC329D2D9FE002AB223 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464CBC29D2D9FE002AB223 /* BaseRouter.swift */; };
-		09464CC429D2D9FE002AB223 /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464CBE29D2D9FE002AB223 /* UIImageLoader.swift */; };
-		09464CC529D2D9FE002AB223 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464CBF29D2D9FE002AB223 /* ImageLoader.swift */; };
 		09464CCA29D2DA11002AB223 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464CC729D2DA11002AB223 /* AppAssembler.swift */; };
 		09464CCB29D2DA11002AB223 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464CC929D2DA11002AB223 /* MainRouter.swift */; };
 		09464CD129D2DB73002AB223 /* KifExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09464CCF29D2DB73002AB223 /* KifExtensions.swift */; };
@@ -90,8 +88,6 @@
 		09464CBA29D2D9FE002AB223 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		09464CBB29D2D9FE002AB223 /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		09464CBC29D2D9FE002AB223 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
-		09464CBE29D2D9FE002AB223 /* UIImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
-		09464CBF29D2D9FE002AB223 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		09464CC729D2DA11002AB223 /* AppAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
 		09464CC929D2DA11002AB223 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		09464CCF29D2DB73002AB223 /* KifExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KifExtensions.swift; sourceTree = "<group>"; };
@@ -300,7 +296,6 @@
 			children = (
 				09464C6929D2D297002AB223 /* AppDelegate.swift */,
 				09464CB829D2D9FE002AB223 /* BaseClasses */,
-				09464CBD29D2D9FE002AB223 /* ImageLoader */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -315,15 +310,6 @@
 				090DFB8929D2F93800980768 /* Mappable.swift */,
 			);
 			path = BaseClasses;
-			sourceTree = "<group>";
-		};
-		09464CBD29D2D9FE002AB223 /* ImageLoader */ = {
-			isa = PBXGroup;
-			children = (
-				09464CBE29D2D9FE002AB223 /* UIImageLoader.swift */,
-				09464CBF29D2D9FE002AB223 /* ImageLoader.swift */,
-			);
-			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 		09464CC629D2DA11002AB223 /* DI */ = {
@@ -678,7 +664,6 @@
 				090DFB7829D2EAA000980768 /* ShowViewModel.swift in Sources */,
 				09464CE729D2E5C6002AB223 /* ShowsViewController.swift in Sources */,
 				09464CC229D2D9FE002AB223 /* BaseLabel.swift in Sources */,
-				09464CC529D2D9FE002AB223 /* ImageLoader.swift in Sources */,
 				09464CE629D2E5C6002AB223 /* ShowsViewModel.swift in Sources */,
 				09464CE129D2E5C6002AB223 /* ShowSmallCell.swift in Sources */,
 				09464C6A29D2D297002AB223 /* AppDelegate.swift in Sources */,
@@ -686,7 +671,6 @@
 				090DFB8C29D2F95700980768 /* ShowMapper.swift in Sources */,
 				090DFB6329D2E90600980768 /* UIImageView+.swift in Sources */,
 				090DFB7629D2EA9600980768 /* ShowViewController.swift in Sources */,
-				09464CC429D2D9FE002AB223 /* UIImageLoader.swift in Sources */,
 				09464CED29D2E881002AB223 /* Show.swift in Sources */,
 				09464CE229D2E5C6002AB223 /* ShowBigCell.swift in Sources */,
 				09464CB429D2D9E8002AB223 /* Assets.swift in Sources */,

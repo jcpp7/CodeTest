@@ -55,7 +55,6 @@ class ShowsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        SwiftSpinner.show(L10n.loaderLoading.text)
         loadShows()
     }
     
@@ -79,6 +78,7 @@ class ShowsViewController: BaseViewController {
     }
     
     private func loadShows() {
+        SwiftSpinner.show(L10n.loaderLoading.text)
         viewModel.loadShows()
     }
     
@@ -100,14 +100,8 @@ class ShowsViewController: BaseViewController {
     }
     
     @objc func reloadShows() {
-        loadShows()
-    }
-    
-    var ops: [BlockOperation] = []
-    
-    deinit {
-        for obj in ops { obj.cancel() }
-        ops.removeAll()
+        SwiftSpinner.show(L10n.loaderLoading.text)
+        viewModel.reloadShows()
     }
     
     override func viewWillLayoutSubviews() {
@@ -122,7 +116,7 @@ extension ShowsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.shows.count
+        return viewModel.storedShows.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -176,6 +170,16 @@ extension ShowsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height = collectionView.frame.size.height
+        let contentYoffset = collectionView.contentOffset.y
+        let distanceFromBottom = collectionView.contentSize.height - contentYoffset
+        
+        if distanceFromBottom - height < 150 {
+            self.loadShows()
+        }
     }
 }
 

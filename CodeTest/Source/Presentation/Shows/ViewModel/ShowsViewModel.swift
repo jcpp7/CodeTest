@@ -14,7 +14,9 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
     let router: MainRouter
     fileprivate var showsRepository: ShowsRepositoryProtocol
     
-    var shows: [Show] = []
+    var storedShows: [Show] = []
+    var page = 0
+    var canAskForTransactions = true
 
     init(router: MainRouter, showsRepository: ShowsRepositoryProtocol) {
         self.router = router
@@ -26,14 +28,29 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
         super.viewWillAppear()
     }
 
+    func reloadShows() {
+        page -= 1
+        loadShows()
+    }
+    
     func loadShows() {
-        showsRepository.loadShows(page: 0) { [weak self] shows, error in
-            if let rShows = shows {
-                self?.shows = rShows
-                self?.view?.loadShowsSuccess()
+        if canAskForTransactions {
+            print("Ask for page %i", page)
+            if page == 0 {
+                storedShows = []
             }
-            if error != nil {
-                self?.view?.loadShowsError()
+            canAskForTransactions = false
+            showsRepository.loadShows(page: page) { [weak self] shows, error in
+                if let rShows = shows {
+                    self?.page += 1
+                    self?.storedShows.append(contentsOf: rShows)
+                    self?.canAskForTransactions = true
+                    self?.view?.loadShowsSuccess()
+                }
+                if error != nil {
+                    self?.canAskForTransactions = true
+                    self?.view?.loadShowsError()
+                }
             }
         }
     }
@@ -43,8 +60,8 @@ class ShowsViewModel<V: ShowsViewProtocol>: BaseViewControllerViewModel<V> {
     }
     
     func getShow(index: Int) -> Show? {
-        if index < shows.count {
-            return shows[index]
+        if index < storedShows.count {
+            return storedShows[index]
         }
         return nil
     }

@@ -46,13 +46,12 @@ class ShowCell: UICollectionViewCell {
         featuredImage.image = placeholder
         
         if let url = URL(string: show.image.medium) {
-            featuredImage.loadImage(at: url)
+            featuredImage.imageFrom(url: url)
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         featuredImage.image = nil
-        featuredImage.cancelImageLoad()
     }
 }
